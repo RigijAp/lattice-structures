@@ -1,6 +1,7 @@
 function out = model(alpha, k)
-k = 4
-alpha = 3618
+% k - mesh size
+% alpha - number of the structure in the database/dataset
+% a - dimension of elementary lattice cell in [mm]
 
 a=10
 
@@ -11,7 +12,7 @@ import com.comsol.model.util.*
 model = ModelUtil.create('model');
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%-CHANGE!!!!!!!-%%%%%%%%%%%%%%%%%%%%%%%%%%
-model.modelPath('E:\MLa\2025_02_city_test\'); % CHANGE
+model.modelPath('E:\....'); % CHANGE
 
 model.component.create('comp1', true);
 
@@ -41,11 +42,9 @@ model.component('comp1').geom('geom1').selection('csel4').label('mat');
 model.component('comp1').geom('geom1').selection.create('csel5', 'CumulativeSelection');
 model.component('comp1').geom('geom1').selection('csel5').label('air');
 
-
-
 model.component('comp1').geom('geom1').create('imp1', 'Import');
 %%%%%%%%%%%%%%%%%%%%%%%%%%-CHANGE!!!!!!!-%%%%%%%%%%%%%%%%%%%%%%%%%%
-model.component('comp1').geom('geom1').feature('imp1').set('filename', "E:\MLa\2025_02_city_test\inp\"+alpha+".stp");
+model.component('comp1').geom('geom1').feature('imp1').set('filename', "'E:\....'\"+alpha+".stp");
 model.component('comp1').geom('geom1').feature('imp1').set('selresult', true);
 model.component('comp1').geom('geom1').feature('imp1').set('contributeto', 'csel4');
 model.component('comp1').geom('geom1').run;
@@ -167,10 +166,9 @@ model.component('comp1').physics('solid').feature('cp1').feature('bp3').selectio
 model.component('comp1').mesh.create('mesh1');
 model.component('comp1').mesh('mesh1').autoMeshSize(k);
 
-%mphsave(model,'D:\s0\test1');
-%mphsave(model,"E:\2024_geo\calc\t34_"+k);
+%mphsave(model,"'E:\....'\test);
 
-mphsave(model,"E:\MLa\2025_02_city_test\test_homo111"+alpha);
+mphsave(model,"'E:\....\homogen' + alpha);
 
 
 %----------------------------------------------------
@@ -245,8 +243,8 @@ model.result.numerical('av1').setResult;
 
 
 model.result.export.create('tbl1', 'Table');
-model.result.export('tbl1').set('filename', "E:\MLa\2025_02_city_test\out\"+alpha+"stl_TC4.txt");%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE path
+model.result.export('tbl1').set('filename', "'E:\....'\out\"+alpha+"stl_TC4.txt");%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% CHANGE path
 model.result.export('tbl1').run;
 
-%mphsave(model,"E:\MLa\2025_02_city_test\test_homo"+alpha);
+%mphsave(model,"'E:\....'\test_homo"+alpha);
 out = model;
