@@ -1,5 +1,8 @@
 function out = model(alpha, k, defo)
 
+% defo - limitation of drforamions in ones[1]
+% k - mesh size
+% alphs - The number of the geomety in [mm]
 
 defo = 0.1
 k = 5
@@ -9,7 +12,7 @@ import com.comsol.model.*
 import com.comsol.model.util.*
 
 model = ModelUtil.create('model');
-model.modelPath('E:\MLa\2025_02_city_test\'); % CHANGE
+model.modelPath('E:...\'); % CHANGE
 
 model.component.create('comp1', true);
 
@@ -37,13 +40,11 @@ model.component('comp1').geom('geom1').selection.create('csel1', 'CumulativeSele
 model.component('comp1').geom('geom1').selection('csel1').label('dom');
 
 model.component('comp1').geom('geom1').create('imp1', 'Import');
-model.component('comp1').geom('geom1').feature('imp1').set('filename', "E:\MLa\2025_02_city_test\inp\"+alpha+".stp");
+model.component('comp1').geom('geom1').feature('imp1').set('filename', "E:...\"+alpha+".stp");
 model.component('comp1').geom('geom1').feature('imp1').set('contributeto', 'csel1');
 model.component('comp1').geom('geom1').run;
 
 %-------------------------stl-----------------------
-%model.component('comp1').geom('geom1').export("D:\tr\Geo\cycle_test\truss_"+alpha+".stl");
-
 model.component('comp1').geom('geom1').create('boxsel1', 'BoxSelection');
 model.component('comp1').geom('geom1').feature('boxsel1').set('condition', 'allvertices');
 model.component('comp1').geom('geom1').feature('boxsel1').set('entitydim', 2);
@@ -246,10 +247,10 @@ model.result.numerical('meas2').set('table', 'tbl2');
 model.result.numerical('meas2').appendResult;
 %-------------------------txt-----------------------
 model.result.export.create('tbl1', 'tbl1', 'Table');
-model.result.export('tbl1').set('filename', "E:\MLa\2025_02_city_test\out\"+alpha+"_ssc_TC4.txt").run;
+model.result.export('tbl1').set('filename', "E:...\"+alpha+"_ssc.txt").run;
 
 model.result.export.create('tbl2', 'tbl2', 'Table');
-model.result.export('tbl2').set('filename', "E:\MLa\2025_02_city_test\out\"+alpha+"_yv_TC4.txt");
+model.result.export('tbl2').set('filename', "E:...\"+alpha+"_yv.txt");
 model.result.export('tbl2').run;
 
 %mphsave(model,'D:\s0\test_astr');
