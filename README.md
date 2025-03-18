@@ -9,7 +9,7 @@ This repository contains scripts for analyzing and predicting the properties of 
 2. [Prediction of Stress-Strain Curves from Geometry](#prediction-of-stress-strain-curves-from-geometry)
 3. [Input and Output](#input-and-output)
 4. [Dependencies](#dependencies)
-5. [License](#license)
+5. [Contact](#contact)
 
 ---
 
@@ -87,17 +87,11 @@ To run the scripts in this repository, ensure you have the following dependencie
 
 ---
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
 ## Contact
 
 For questions or support, feel free to reach out:  
-- **Author**: Your Name  
-- **Email**: your.email@example.com  
-- **GitHub**: [your-username](https://github.com/your-username)  
+- **Author**: Anna Step
+- **Email**: anna_step@zhejianglab.com  
+- **GitHub**: [your-username](https://github.com/RigijAp)  
 
 ---
