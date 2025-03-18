@@ -9,8 +9,7 @@ This repository contains scripts for analyzing and predicting the properties of 
 2. [Prediction of Stress-Strain Curves from Geometry](#prediction-of-stress-strain-curves-from-geometry)
 3. [Usage](#usage)
 4. [Input and Output](#input-and-output)
-5. [Dependencies](#dependencies)
-6. [License](#license)
+5
 
 ---
 
@@ -67,15 +66,16 @@ Use the Python notebook `DNN.ipynb` to train a Convolutional Neural Network (CNN
 
 ## Usage
 
-1. Clone the repository:
+Clone the repository:
    ```bash
    git clone https://github.com/your-username/your-repo.git
 
-   ## Input and Output
+   
+## Input and Output
 
 | Script                          | Input                                                                 | Output                                                                 |
 |---------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------|
-| `homogenization.m`              | Material properties, `.stp/.step` geometry                            | Elasticity tensor, compliance tensor, density, volume                  |
-| `stress-strain curve for a single cell.m` | Material properties, `.stp/.step` geometry                  | Stress, strain, Z-component reaction forces                            |
-| `parcer.ipynb`                  | `.stl` file                                                          | Node coordinates, adjacency matrix, connection vectors                 |
-| `DNN.ipynb`                     | Parsed data from `parcer.ipynb`                                       | Stress-strain curve prediction                    
+| `homogenization.m`              | Material properties, `.stp/.step` geometry                            | Elasticity tensor, compliance tensor, density, volume (.txt)           |
+| `stress-strain curve for a single cell.m` | Material properties, `.stp/.step` geometry                  | Stress, strain, Z-component reaction forces   (.txt)                   |
+| `parcer.ipynb`                  | `.stl` file                                                          | Node coordinates, adjacency matrix, connection vectors    (3 files .txt)|
+| `DNN.ipynb`                     | Parsed data from `parcer.ipynb` output                                | Stress-strain curve prediction   (.txt)                       
