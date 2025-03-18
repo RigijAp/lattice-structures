@@ -70,8 +70,6 @@ Clone the repository:
    ```bash
    git clone https://github.com/your-username/your-repo.git
 
--### How It Looks on GitHub:
-
 ---
 
 ## Input and Output
