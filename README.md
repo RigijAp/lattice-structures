@@ -70,12 +70,35 @@ Clone the repository:
    ```bash
    git clone https://github.com/your-username/your-repo.git
 
-   
+-### How It Looks on GitHub:
+
+---
+
 ## Input and Output
+
+Below is a summary of the inputs and outputs for each script:
 
 | Script                          | Input                                                                 | Output                                                                 |
 |---------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------|
-| `homogenization.m`              | Material properties, `.stp/.step` geometry                            | Elasticity tensor, compliance tensor, density, volume (.txt)           |
-| `stress-strain curve for a single cell.m` | Material properties, `.stp/.step` geometry                  | Stress, strain, Z-component reaction forces   (.txt)                   |
-| `parcer.ipynb`                  | `.stl` file                                                          | Node coordinates, adjacency matrix, connection vectors    (3 files .txt)|
-| `DNN.ipynb`                     | Parsed data from `parcer.ipynb` output                                | Stress-strain curve prediction   (.txt)                       
+| `homogenization.m`              | Material properties, `.stp/.step` geometry                            | Elasticity tensor, compliance tensor, density, volume                  |
+| `stress-strain curve for a single cell.m` | Material properties, `.stp/.step` geometry                  | Stress, strain, Z-component reaction forces                            |
+| `parcer.ipynb`                  | `.stl` file                                                          | Node coordinates, adjacency matrix, connection vectors                 |
+| `DNN.ipynb`                     | Parsed data from `parcer.ipynb`                                       | Stress-strain curve prediction                                         |
+
+---
+
+## Dependencies
+
+To run the scripts in this repository, ensure you have the following dependencies installed:
+
+- **MatLab** (COMSOL 6.2 or higher).  
+- **Python** (with libraries: NumPy, Pandas, TensorFlow/Keras, Matplotlib).  
+- **COMSOL Multiphysics** (for running MatLab scripts).  
+
+---
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
