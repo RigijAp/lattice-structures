@@ -1,15 +1,72 @@
-# Properties of lattice structure
+# Properties of Lattice Structure 📐
 
-All the scripts are prepared for the cubic cells with a = 10 mm. The size od a single cell and material (material's properties) can be changed.
+This repository contains scripts for analyzing and predicting the properties of lattice structures. All scripts are designed for cubic cells with a default edge length of **a = 10 mm**. The size of a single cell and material properties can be customized as needed.
 
-## Homogenization for lattice structures
-To obtain the homogenisies properties for a single lattice cell, run the MatLab script *homogenization.m* from COMSOL 6.2 or higher. The input are material's properties such as Poisson's ratio, Young's modulus, density (now for TC4) and the geometry at *.stp/.step* format. As output we have elasticity tensor, complience tensor, density, volume.
+---
 
-For plasticity properties of a single cell structure, run the MatLab script *stress-strain curve for a single cell.m* from COMSOL 6.2 or higher. The input are material's properties such as Poisson's ratio, Young's modulus, density, plasticity curve  (now for TC4) and the geometry at *.stp/.step* format. As output we have values of stresses, strains, z-component react forces.
+## Table of Contents
+1. [Homogenization for Lattice Structures](#homogenization-for-lattice-structures)
+2. [Prediction of Stress-Strain Curves from Geometry](#prediction-of-stress-strain-curves-from-geometry)
+3. [Usage](#usage)
+4. [Input and Output](#input-and-output)
+5. [Dependencies](#dependencies)
+6. [License](#license)
 
-Both of scripts can be used as function to make a stream calculation.
+---
 
-## Prediction of stress-strain curves from geometry (.stl format) 
-At the first step it is necessary to parce the images from .stl format to coordinates of nodes, adjection matrix, vectors. For this purpose use Python notebook *parcer.ipynb*. As input we have *.stl* file, as output adkection matix, nodes coordinates and connections.
+## Homogenization for Lattice Structures
 
-A script *DNN.ipynb* is needed to train a convolution neural network. At the firts step thecodes allows to decrease the dimention, and then prepare the prediction with CNN.
+To obtain homogenized properties for a single lattice cell, use the following MatLab scripts:
+
+### 1. **Elastic Properties**
+Run the MatLab script `homogenization.m` in **COMSOL 6.2 or higher**.  
+**Input:**  
+- Material properties: Poisson's ratio, Young's modulus, density (default: TC4 material).  
+- Geometry file in `.stp` or `.step` format.  
+
+**Output:**  
+- Elasticity tensor.  
+- Compliance tensor.  
+- Density.  
+- Volume.  
+
+### 2. **Plastic Properties**
+Run the MatLab script `stress-strain curve for a single cell.m` in **COMSOL 6.2 or higher**.  
+**Input:**  
+- Material properties: Poisson's ratio, Young's modulus, density, plasticity curve (default: TC4 material).  
+- Geometry file in `.stp` or `.step` format.  
+
+**Output:**  
+- Stress values.  
+- Strain values.  
+- Z-component reaction forces.  
+
+Both scripts can be used as functions for streamlined calculations.
+
+---
+
+## Prediction of Stress-Strain Curves from Geometry
+
+### Step 1: Geometry Parsing
+Use the Python notebook `parcer.ipynb` to parse geometry files in `.stl` format.  
+**Input:**  
+- `.stl` file.  
+
+**Output:**  
+- Node coordinates.  
+- Adjacency matrix.  
+- Connection vectors.  
+
+### Step 2: Deep Learning Prediction
+Use the Python notebook `DNN.ipynb` to train a Convolutional Neural Network (CNN) for stress-strain curve prediction.  
+**Process:**  
+1. Dimensionality reduction.  
+2. CNN-based prediction.  
+
+---
+
+## Usage
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
