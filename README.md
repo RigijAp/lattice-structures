@@ -70,3 +70,12 @@ Use the Python notebook `DNN.ipynb` to train a Convolutional Neural Network (CNN
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/your-repo.git
+
+   ## Input and Output
+
+| Script                          | Input                                                                 | Output                                                                 |
+|---------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------|
+| `homogenization.m`              | Material properties, `.stp/.step` geometry                            | Elasticity tensor, compliance tensor, density, volume                  |
+| `stress-strain curve for a single cell.m` | Material properties, `.stp/.step` geometry                  | Stress, strain, Z-component reaction forces                            |
+| `parcer.ipynb`                  | `.stl` file                                                          | Node coordinates, adjacency matrix, connection vectors                 |
+| `DNN.ipynb`                     | Parsed data from `parcer.ipynb`                                       | Stress-strain curve prediction                    
