@@ -90,8 +90,8 @@ To run the scripts in this repository, ensure you have the following dependencie
 ## Contact
 
 For questions or support, feel free to reach out:  
-- **Author**: Anna Step
+- **Author**: Anna Step （Anna Stepashkina）
 - **Email**: anna_step@zhejianglab.com  
-- **GitHub**: [your-username](https://github.com/RigijAp)  
+- **GitHub**: [RigijAp](https://github.com/RigijAp)  
 
 ---
